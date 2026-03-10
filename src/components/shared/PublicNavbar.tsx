@@ -34,7 +34,7 @@ const PublicNavbar = () => {
 
         <div className="hidden md:flex items-center space-x-2">
           <Link href="/login" className="text-lg font-medium">
-            <Button>Login</Button>
+            <Button className="px-8 py-5 ">Login</Button>
           </Link>
         </div>
 
@@ -60,7 +60,7 @@ const PublicNavbar = () => {
                 <div className="border-t pt-4 flex flex-col space-y-4">
                   <div className="flex justify-center"></div>
                   <Link href="/login" className="text-lg font-medium">
-                    <Button>Login</Button>
+                    <Button className=' '>Login e</Button>
                   </Link>
                 </div>
               </nav>

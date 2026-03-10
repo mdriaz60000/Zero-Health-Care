@@ -1,9 +1,10 @@
+import { Hero } from '@/components/modules/Home/Hero';
 import React from 'react';
 
 const Home = () => {
     return (
         <div>
-            sdee eeeeeeee
+            <Hero></Hero>
         </div>
     );
 };
