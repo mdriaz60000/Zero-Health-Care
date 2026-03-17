@@ -9,6 +9,7 @@ const CommonLayout = ({ children } : {children : React.ReactNode}) => {
          <PublicNavbar></PublicNavbar>
 
           { children }
+          
  <PublicFooter></PublicFooter>
 
         </>
