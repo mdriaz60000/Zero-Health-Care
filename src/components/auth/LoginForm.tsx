@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useActionState } from "react";
+import { useActionState,  } from "react";
 
 import { Field, FieldDescription, FieldGroup, FieldLabel } from "../ui/field";
 import { Input } from "../ui/input";
@@ -9,8 +9,10 @@ import { Button } from "../ui/button";
 import { loginUser } from "@/service/auth/login";
 
 
-const LoginForm = () => {
+
+const LoginForm = ({ redirect }: { redirect?: string }) => {
   const [state, formAction, isPending] = useActionState( loginUser, null);
+  console.log(redirect, "redirecttoooooo")
 
 
   const getFieldError = (fieldName: string) => {
@@ -24,6 +26,8 @@ const LoginForm = () => {
   console.log(state);
   return (
     <form action={formAction}>
+      { redirect && <input type="hidden" name="redirect" value={redirect} />}
+      
       <FieldGroup>
         <div className="grid grid-cols-1 gap-4">
           {/* Email */}

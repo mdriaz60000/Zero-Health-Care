@@ -3,6 +3,8 @@
 
 "use server"
 
+import { loginUser } from "./login"
+
 export const registerPatients = async ( _currentState :any, formData :any) : Promise<any> => {
  try{
     const registerData ={
@@ -22,9 +24,12 @@ export const registerPatients = async ( _currentState :any, formData :any) : Pro
     body : newFormData
    })
 
-   const data = await response.json()
-   return data
-   
+   const result = await response.json()
+
+   if(result.success)
+   await loginUser(_currentState, formData)
+  
+   return result
 
 
  }catch(error){
